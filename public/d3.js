@@ -162,19 +162,34 @@
 var w = 300;
 var h = 300;
 
-var dataset = [{
-  percent: 20,
-  title: "Chocolate"
-  },
-  {percent: 50,
-  title: "Dogs"},
-  {
-    percent: 30,
-    title: "Mountains"
-  }
-];
-//var dataset = [ 5, 10, 20, 45, 6, 25 ];
-//
+// var dataset = [{
+//   "percent": "20",
+//   "title": "Chocolate"
+//   },
+//   {
+//   "percent": "50",
+//   "title": "Dogs"},
+//   {
+//     "percent": "30",
+//     "title": "Mountains"
+//   },
+//   {
+//   "percent": "20",
+//   "title": "Chocolate"
+//   },
+//   {
+//   "percent": "50",
+//   title: "Dogs"},
+//   {
+//     "percent": "30",
+//     "title": "Mountains"
+//   }
+// ];
+
+//d3.csv("food.csv", function(data) {
+//     console.log(data);
+// });
+
 var outerRadius = w / 2;
 var innerRadius = 0;
 var arc = d3.arc()
@@ -218,4 +233,7 @@ arcs.append("text")
     .text(function(d, i) {
       console.log(d);
       return d.data.title;
-    });
+    })
+    .style('fill', 'white')
+    .style('font-family', 'sans-serif')
+    .style('font-size', '15px');
