@@ -162,7 +162,18 @@
 var w = 300;
 var h = 300;
 
-var dataset = [ 5, 10, 20, 45, 6, 25 ];
+var dataset = [{
+  percent: 20,
+  title: "Chocolate"
+  },
+  {percent: 50,
+  title: "Dogs"},
+  {
+    percent: 30,
+    title: "Mountains"
+  }
+];
+//var dataset = [ 5, 10, 20, 45, 6, 25 ];
 //
 var outerRadius = w / 2;
 var innerRadius = 0;
@@ -170,7 +181,9 @@ var arc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(outerRadius);
 //
-var pie = d3.pie();
+var pie = d3.pie()
+  .value(function(d) { return d.percent; })
+  .sort(null);;
 
 //Easy colors accessible via a 10-step ordinal scale
 var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -202,6 +215,7 @@ arcs.append("text")
       return "translate(" + arc.centroid(d) + ")";
     })
     .attr("text-anchor", "middle")
-    .text(function(d) {
-      return d.value;
+    .text(function(d, i) {
+      console.log(d);
+      return d.data.title;
     });

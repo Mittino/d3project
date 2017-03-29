@@ -5,3 +5,7 @@ div.bar {
     background-color: teal;
     margin-right: 2px;
 }
+
+path:hover{
+  fill: #ED237E;
+}
