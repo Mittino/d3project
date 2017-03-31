@@ -22,7 +22,18 @@ d3.csv("food.csv", function(data) {
   var dataset = data;
   console.log(data);
   console.log(dataset);
+  drawPie(data);
+});
 
+d3.csv("activities.csv", function(data) {
+  var dataset = data;
+  console.log(data);
+  console.log(dataset);
+  drawPie(data);
+});
+
+
+function drawPie(dataset){
   var outerRadius = w / 2;
   var innerRadius = 35;
   var arc = d3.arc()
@@ -57,7 +68,7 @@ d3.csv("food.csv", function(data) {
       return color(i);
     })
     .attr("d", arc);
-    
+
 //Add text
   arcs.append("text")
     .attr("transform", function(d) {
@@ -70,4 +81,4 @@ d3.csv("food.csv", function(data) {
     .style('fill', 'white')
     .style('font-family', 'sans-serif')
     .style('font-size', '15px');
-});
+  }
