@@ -190,6 +190,10 @@ var h = 300;
 //     console.log(data);
 // });
 
+var dataset = d3.csv("food.csv", function(data) {
+    console.log(data);
+});
+
 var outerRadius = w / 2;
 var innerRadius = 0;
 var arc = d3.arc()
