@@ -9,3 +9,11 @@ div.bar {
 path:hover{
   fill: #ED237E;
 }
+
+text:hover{
+  color: #ED237E;
+}
+
+svg.pie{
+  margin: 50px;
+}

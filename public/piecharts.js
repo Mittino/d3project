@@ -1,7 +1,7 @@
 'use strict'
 
-var w = 300;
-var h = 300;
+var w = 350;
+var h = 350;
 
 // var dataset = [{
 //   "percent": "20",
@@ -35,7 +35,7 @@ d3.csv("activities.csv", function(data) {
 
 function drawPie(dataset){
   var outerRadius = w / 2;
-  var innerRadius = 35;
+  var innerRadius = 50;
   var arc = d3.arc()
     .innerRadius(innerRadius)
     .outerRadius(outerRadius);
@@ -50,6 +50,7 @@ function drawPie(dataset){
 //Create SVG element
   var svg = d3.select("body")
     .append("svg")
+    .attr("class", "pie")
     .attr("width", w)
     .attr("height", h);
 
@@ -76,9 +77,9 @@ function drawPie(dataset){
     })
     .attr("text-anchor", "middle")
     .text(function(d) {
-      return d.data.percent + '%';
+      return d.data.title;
     })
     .style('fill', 'white')
     .style('font-family', 'sans-serif')
-    .style('font-size', '15px');
-  }
+    .style('font-size', '12px');
+}
