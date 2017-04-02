@@ -3,21 +3,6 @@
 var w = 350;
 var h = 350;
 
-// var dataset = [{
-//   "percent": "20",
-//   "title": "Chocolate"
-//   },
-//   {
-//   "percent": "50",
-//   "title": "Dogs"},
-//   {
-//     "percent": "30",
-//     "title": "Mountains"
-//   }
-// ];
-
-// var dataset;
-
 d3.csv("food.csv", function(data) {
   var dataset = data;
   console.log(data);
